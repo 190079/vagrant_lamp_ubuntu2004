@@ -1,6 +1,10 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
+#
+#For Virtual box 
+#VMM="Virtualbox"
 
+VMM="libvirt"
 # All Vagrant configuration is done below. The "2" in Vagrant.configure
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
@@ -13,16 +17,7 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "generic/ubuntu2004"
-  config.vm.network "public_network"
-  config.vm.network "forwarded_port", guest: 3000, host: 3000
-  config.vm.network "private_network", type: "dhcp"
-  config.vm.network "private_network", ip: "192.168.56.4"
-  #config.vm.provision :ansible do |ansible|
-  #  ansible.limit = "all"
-  #  ansible.playbook = "provision.yaml"
-  #  auto_config: false
-  #config.vm.provision "ansible" do |ansible|
-  #   ansible.playbook = "playbook.yml"
+  config.vm.hostname = "lampstack"
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
@@ -46,7 +41,7 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-
+  # config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -58,7 +53,7 @@ Vagrant.configure("2") do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-   config.vm.provider "libvirt" do |vb|
+   config.vm.provider VMM do |vb|
   #   # Display the VirtualBox GUI when booting the machine
   #   vb.gui = true
   #
@@ -72,9 +67,5 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Ansible, Chef, Docker, Puppet and Salt are also available. Please see the
   # documentation for more information about their specific syntax and use.
-   config.vm.provision "shell", inline: <<-SHELL
-      sudo apt update
-      sudo apt upgrage -y
-      sudo apt install tasksel -y
-   SHELL
+   config.vm.provision "shell", path: "lamp_ubuntu2004.sh"
 end

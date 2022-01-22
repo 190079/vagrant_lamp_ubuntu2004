@@ -74,3 +74,9 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 Success.
 
 All done!</p>
+
+## Verify The Install.
+To verify go to web browser and visit
+    <a href="127.0.0.1:8080/info.php">info.php</a>
+    
+## Happy Hunting...

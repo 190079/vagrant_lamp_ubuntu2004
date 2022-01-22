@@ -13,7 +13,7 @@ LAMP (Linux, Apache, MySQL, PHP/Perl/Python) is an acronym denoting one of the m
  > $ sudo mysql_secure_installation
 
 ### Follow instructions 
-`Securing the MySQL server deployment.
+<p>Securing the MySQL server deployment.
 
 Connecting to MySQL using a blank password.
 
@@ -73,4 +73,4 @@ made so far will take effect immediately.
 Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y
 Success.
 
-All done!`
+All done!</p>

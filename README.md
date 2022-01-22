@@ -12,6 +12,11 @@ LAMP (Linux, Apache, MySQL, PHP/Perl/Python) is an acronym denoting one of the m
     MySQL for the relational database management system
     PHP, Perl, or Python programming language
 
+## This Script Installs:
+    Apache2
+    MYSQL
+    PHP
+    PHPMYADMIN
 ## To start the Vagrant box.
  >  vagrant up
     

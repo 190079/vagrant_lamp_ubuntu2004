@@ -13,11 +13,11 @@ LAMP (Linux, Apache, MySQL, PHP/Perl/Python) is an acronym denoting one of the m
     PHP, Perl, or Python programming language
 
 ## To start the Vagrant box.
-    > vagrant up
+ >  vagrant up
     
 ## After starting vagrant box. 
 ### Configure MYSQL Server
- The following command install helps the user to install MYSQL securely.
+ The following command install helps the user to install MYSQL securely. Follow the Follow instructions section to modify the code.
  >  sudo mysql_secure_installation
 
 ### Follow instructions 
@@ -84,6 +84,6 @@ LAMP (Linux, Apache, MySQL, PHP/Perl/Python) is an acronym denoting one of the m
 
 ## Verify The Install.
 To verify go to web browser and visit:
-    127.0.0.1:8080/info.php
+   >  127.0.0.1:8080/info.php
     
 ## Happy Hunting...
